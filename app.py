@@ -11,11 +11,11 @@ CORS(app)
 def hello():
     return 'hello world '
 
-@app.route('/users', methods=['GET'])
+@app.route('/api/v1/users', methods=['GET'])
 def get_users():
     rows=DA.get_rows()
     return jsonify(rows)
-@app.route('/users',methods=['POST'])
+@app.route('/api/v1/users',methods=['POST'])
 def add_user():    
     
     user=(request.json['name'],request.json['age'],request.json['email'])
